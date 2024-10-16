@@ -1,41 +1,56 @@
-// components/_header.scss
-
+// Header SCSS
 header {
-  background-color: $primary-color;
-  padding: $base-spacing;
+  background-color: $primary-color; // Use your primary color from variables
+  padding: $base-spacing; // Base spacing from variables
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Optional shadow for visual depth
 
   .container {
-    @include flex-center(space-between);
-    flex-wrap: wrap;
+    @include flex-center(row); // Using your flex-center mixin to align items in a row
+    justify-content: space-between; // Ensure space between logo and navigation
+    align-items: center;
   }
 
-  .logo img {
-    max-height: 60px;
+  .logo {
+    img {
+      max-width: 60px; // Limit the size of the logo for consistency
+    }
   }
 
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  nav {
+    ul {
+      list-style-type: none; // Remove default list styling
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: $base-spacing; // Spacing between each navigation item
+    }
 
     li {
-      margin-left: $base-spacing;
-
-      &:first-child {
-        margin-left: 0;
-      }
+      margin: 0;
 
       a {
-        color: $secondary-color;
+        @include typography(20px, normal, 1.5, $secondary-color); // Typography mixin for consistent text styling
         text-decoration: none;
-        font-weight: bold;
-        @include transition(color);
+        padding: $base-spacing / 2 $base-spacing; // Padding inside links
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
 
         &:hover {
-          color: $accent-color;
+          background-color: lighten($primary-color, 10%); // Lighten background on hover
         }
       }
+    }
+  }
+}
+
+// Mobile responsive adjustments
+@include respond('small') {
+  header {
+    padding: $base-spacing / 2; // Reduce padding for smaller screens
+
+    nav ul {
+      flex-direction: column; // Stack links vertically
+      gap: $base-spacing / 2;
     }
   }
 }

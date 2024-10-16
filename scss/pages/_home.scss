@@ -70,7 +70,7 @@ nav li {
     h2 {
       text-align: center;
       margin-bottom: $base-spacing * 2;
-      @include typography(32px, bold, 1.3, $primary-color);
+      @include typography(32px, bold, 1.3, $text2-color);
     }
   
     .container {
@@ -130,13 +130,22 @@ nav li {
   }
 
 
+  .about-boston{
+    padding: $base-spacing * 3 0;
+    background-color: $third-color;
 
-.about-boston, .upcoming-events {
+    h2 {
+        @include typography(32px, bold, 1.2, $text2-color);
+        text-align: center;
+        margin-bottom: $base-spacing * 2;
+    }
+  }
+ .upcoming-events {
     padding: $base-spacing * 3 0;
     background-color: $background-color;
 
     h2 {
-        @include typography(32px, bold, 1.2, $primary-color);
+        @include typography(32px, bold, 1.2, $text2-color);
         text-align: center;
         margin-bottom: $base-spacing * 2;
     }
@@ -149,23 +158,72 @@ nav li {
     }
 
     .events-container {
-        display: flex;
-        flex-direction: column;
-        gap: $base-spacing;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // Create responsive grid for events
+      gap: $base-spacing * 2; // Gap between each event card
 
-        .event-item {
-            background-color: $secondary-color;
-            border-radius: 8px;
-            padding: $base-spacing;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      .event-item {
+          background-color: $secondary-color;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Soft shadow for depth
+          transition: transform 0.3s ease, box-shadow 0.3s ease; // Smooth transitions on hover
+          display: flex;
+          flex-direction: column;
 
-            h3 {
-                @include typography(24px, bold, 1.3, $primary-color);
-            }
+          &:hover {
+              transform: translateY(-5px); // Lift up on hover
+              box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Stronger shadow on hover
+          }
 
-            p {
-                @include typography(16px, normal, 1.5, $text-color);
-            }
-        }
-    }
+          img {
+              width: 100%;
+              height: 150px; // Fixed height for image
+              object-fit: cover; // Ensure the image is properly cropped
+              border-bottom: 2px solid $primary-color; // Border below the image for a subtle separation
+          }
+
+          .event-details {
+              padding: $base-spacing;
+              text-align: left;
+
+              h3 {
+                  @include typography(24px, bold, 1.3, $text2-color);
+                  margin-bottom: $base-spacing / 2;
+              }
+
+              .date {
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: $accent-color;
+                  background-color: darken($accent-color, 10%);
+                  padding: 4px 8px;
+                  display: inline-block;
+                  border-radius: 4px;
+                  margin-bottom: $base-spacing;
+              }
+
+              p {
+                  @include typography(16px, normal, 1.5, $text2-color);
+                  margin-bottom: $base-spacing;
+              }
+
+              a {
+                  color: $primary-color;
+                  text-decoration: none;
+                  font-weight: bold;
+                  @include transition(color, 0.3s ease);
+
+                  &:hover {
+                      color: darken($primary-color, 15%);
+                  }
+              }
+          }
+      }
+  }
+}
+@include respond('small') {
+  .upcoming-events .events-container {
+      grid-template-columns: 1fr; // Stack items in one column on smaller screens
+  }
 }
