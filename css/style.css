@@ -2,7 +2,7 @@
 /* Import variables and mixins first */
 /* Import partials */
 header {
-  background-color: #9cd4e7;
+  background-color: #c3e7f3;
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -22,7 +22,7 @@ header nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 16px;
+  gap: 8px;
 }
 header nav li {
   margin: 0;
@@ -39,7 +39,7 @@ header nav li a {
   transition: background-color 0.3s ease;
 }
 header nav li a:hover {
-  background-color: #c5e6f1;
+  background-color: #eef8fc;
 }
 
 @media (max-width: 600px) {
@@ -52,7 +52,7 @@ header nav li a:hover {
   }
 }
 footer {
-  background-color: #9cd4e7;
+  background-color: #c3e7f3;
   padding: 48px 0;
   color: #FFFFFF;
 }
@@ -123,12 +123,10 @@ footer .footer-bottom {
     margin-top: 16px;
   }
 }
-h1 {
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 1.2;
-  color: #9cd4e7;
-  font-family: "Roboto", sans-serif;
+.about-content .grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
 }
 
 p {
@@ -165,6 +163,14 @@ nav li {
 .event-item {
   flex: 1 1 calc(50% - 20px);
   box-sizing: border-box;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #c3e7f3;
+  font-family: "Roboto", sans-serif;
 }
 
 .hero-content {
@@ -250,7 +256,7 @@ nav li {
   font-size: 24px;
   font-weight: bold;
   line-height: 1.2;
-  color: #9cd4e7;
+  color: #c3e7f3;
   font-family: "Roboto", sans-serif;
 }
 .featured-attractions .attraction-card p {
@@ -323,6 +329,7 @@ nav li {
   gap: 32px;
 }
 .upcoming-events .events-container .event-item {
+  padding: 30px;
   background-color: #FFFFFF;
   border-radius: 8px;
   overflow: hidden;
@@ -340,17 +347,17 @@ nav li {
   height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-bottom: 2px solid #9cd4e7;
+  border-bottom: 2px solid #c3e7f3;
 }
 .upcoming-events .events-container .event-item .event-details {
-  padding: 16px;
-  text-align: left;
+  text-align: center;
 }
-.upcoming-events .events-container .event-item .event-details h3 {
-  font-size: 24px;
+.upcoming-events .events-container .event-item .event-details h1 {
+  text-align: center;
+  font-size: 5px;
   font-weight: bold;
   line-height: 1.3;
-  color: #1a586d;
+  color: #02485f;
   font-family: "Roboto", sans-serif;
   margin-bottom: 8px;
 }
@@ -373,13 +380,13 @@ nav li {
   margin-bottom: 16px;
 }
 .upcoming-events .events-container .event-item .event-details a {
-  color: #9cd4e7;
+  color: #c3e7f3;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease ease-in-out;
 }
 .upcoming-events .events-container .event-item .event-details a:hover {
-  color: #5eb9d8;
+  color: #83cee6;
 }
 
 @media (max-width: 600px) {
@@ -387,11 +394,107 @@ nav li {
     grid-template-columns: 1fr;
   }
 }
+.about-hero {
+  background-color: #99d6eb;
+  padding: 64px 0;
+}
+.about-hero .hero-content h1 {
+  font-size: 48px;
+  color: #FFFFFF;
+}
+.about-hero .hero-content p {
+  font-size: 20px;
+  color: #448eb9;
+}
+
+.about-content {
+  background-color: #f5faff;
+  padding: 48px 0;
+}
+.about-content .container .grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.about-content .container .grid-layout .history, .about-content .container .grid-layout .culture, .about-content .container .grid-layout .landmarks, .about-content .container .grid-layout .education {
+  background-color: #FFFFFF;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.about-content .container .grid-layout .history h2, .about-content .container .grid-layout .culture h2, .about-content .container .grid-layout .landmarks h2, .about-content .container .grid-layout .education h2 {
+  color: #c3e7f3;
+  margin-bottom: 16px;
+}
+.about-content .container .grid-layout .history p, .about-content .container .grid-layout .culture p, .about-content .container .grid-layout .landmarks p, .about-content .container .grid-layout .education p {
+  color: #448eb9;
+}
+
+.gallery {
+  padding: 48px 0;
+  background-color: #FFFFFF;
+}
+.gallery .container h2 {
+  color: #c3e7f3;
+}
+.gallery .container .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.gallery .container .gallery-grid img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  .about-hero .hero-content h1 {
+    font-size: 36px;
+  }
+  .about-hero .hero-content p {
+    font-size: 18px;
+  }
+  .about-content .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+  }
+  .gallery .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .about-hero .hero-content h1 {
+    font-size: 28px;
+  }
+  .about-hero .hero-content p {
+    font-size: 16px;
+  }
+  .about-content .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+  }
+  .gallery .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+  }
+}
 .featured-attractions .attraction-card {
   background-color: #FFFFFF;
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-hero .hero-content, .gallery .container {
+  text-align: center;
+  margin: 0 auto;
 }
 
 /* Import other necessary partials */

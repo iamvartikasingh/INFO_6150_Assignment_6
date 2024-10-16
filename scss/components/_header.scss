@@ -1,4 +1,5 @@
-// Header SCSS
+@use 'sass:math'; // Import Sass math module
+
 header {
   background-color: $primary-color; // Use your primary color from variables
   padding: $base-spacing; // Base spacing from variables
@@ -22,7 +23,7 @@ header {
       margin: 0;
       padding: 0;
       display: flex;
-      gap: $base-spacing; // Spacing between each navigation item
+      gap: math.div($base-spacing, 2); // Spacing between each navigation item
     }
 
     li {
@@ -31,7 +32,7 @@ header {
       a {
         @include typography(20px, normal, 1.5, $secondary-color); // Typography mixin for consistent text styling
         text-decoration: none;
-        padding: $base-spacing / 2 $base-spacing; // Padding inside links
+        padding: math.div($base-spacing, 2) $base-spacing; // Use math.div() for padding
         border-radius: 4px;
         transition: background-color 0.3s ease;
 
@@ -46,11 +47,11 @@ header {
 // Mobile responsive adjustments
 @include respond('small') {
   header {
-    padding: $base-spacing / 2; // Reduce padding for smaller screens
+    padding: math.div($base-spacing, 2); // Reduce padding for smaller screens
 
     nav ul {
       flex-direction: column; // Stack links vertically
-      gap: $base-spacing / 2;
+      gap: math.div($base-spacing, 2);
     }
   }
 }

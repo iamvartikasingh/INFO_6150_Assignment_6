@@ -3,6 +3,7 @@
 // _mixins.scss
 
 // Flex Center Mixin
+@use 'sass:math';
 
 @mixin flex-center($direction: row) {
     display: flex;
@@ -30,6 +31,11 @@
   }
 
 
+  @mixin grid-layout($columns) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: math.div($base-spacing, 2); // Adjust grid gap
+}
 
   @mixin responsive-grid($columns) {
     display: grid;
