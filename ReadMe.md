@@ -239,5 +239,3 @@ cd boston-travel-guide
 Conclusion
 
 This project demonstrates the power and flexibility of SCSS in a real-world website project, incorporating best practices like modularity, reusability, and responsiveness. It showcases a variety of SCSS features such as variables, mixins, functions, grid and flexbox layouts, and responsive media queries.
-
-Let me know if you’d like to tweak any part of this or need additional details in the README.md file!
