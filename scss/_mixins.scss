@@ -127,3 +127,10 @@
       @media (max-width: 1200px) { @content; }
     }
   }
+
+  @mixin typography($size: 16px, $weight: normal, $line-height: 1.5, $color: $text-color) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+    color: $color;
+  }

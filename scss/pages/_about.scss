@@ -2,7 +2,7 @@
 
 // About Hero Section
 .about-hero {
-    background-color: darken($primary-color, 10%);
+    background-color: darken($hero-color, 10%);
     padding: $base-spacing * 4 0;
     .hero-content {
         @extend %centered;

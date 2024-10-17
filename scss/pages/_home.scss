@@ -1,5 +1,4 @@
-
-
+@use 'sass:math';
 .about-content {
     .grid-layout {
         @include grid-layout(2); // Now the grid-layout mixin is available
