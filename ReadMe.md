@@ -50,7 +50,7 @@ $base-spacing: 16px;
 
 	•	Nesting is used to keep the structure of CSS cleaner by placing related styles together in a hierarchical manner.
 	•	Example:
-
+```scss
 header {
   .container {
     .logo {
@@ -60,74 +60,74 @@ header {
     }
   }
 }
-
+```
 
 
 4. Interpolation
 
 	•	Interpolation allows for the dynamic use of variables within property values or selectors.
 	•	Example:
-
+```scss
 .col-#{$size} {
   width: #{$size * 10}%;
 }
 
-
+```
 
 5. Placeholder Selectors
 
 	•	Placeholders are used to define common styles that can be extended throughout the project, keeping the code DRY (Don’t Repeat Yourself).
 	•	Example:
-
+```scss
 %centered {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+```
 
 
 6. Mixins
 
 	•	Mixins are used to create reusable blocks of code, reducing redundancy.
 	•	Example:
-
+```scss
 @mixin flex-center($direction: row) {
   display: flex;
   flex-direction: $direction;
   justify-content: center;
   align-items: center;
 }
-
+```
 
 
 7. Functions
 
 	•	Functions are used to perform calculations or return values for use in styles.
 	•	Example:
-
+```scss
 @function calc-rem($size) {
   @return $size / 16 * 1rem;
 }
-
+```
 
 
 8. Extend/Inheritance
 
 	•	Extend is used to share styles between different elements by inheriting from placeholder selectors.
 	•	Example:
-
+```scss
 .button {
   @extend %centered;
 }
-
+```
 
 
 9. Responsive Media Queries
 
 	•	Custom breakpoints are used to create responsive designs that adapt to different screen sizes.
 	•	Example:
-
+```scss
 @mixin respond($breakpoint) {
   @if $breakpoint == 'small' {
     @media (max-width: 600px) { @content; }
@@ -135,7 +135,7 @@ header {
     @media (max-width: 900px) { @content; }
   }
 }
-
+```
 
 
 10. Color Manipulation Functions
@@ -143,44 +143,45 @@ header {
 	•	SCSS’s built-in color functions are used to manipulate colors, such as darken() and lighten().
 	•	Example:
 
+```scss
 background-color: lighten($primary-color, 10%);
-
+```
 
 
 11. Math Functions
 
 	•	SCSS math functions, like math.div(), are used to perform arithmetic calculations in stylesheets.
 	•	Example:
-
+```scss
 gap: math.div($base-spacing, 2);
-
+```
 
 
 12. Grid Layout
 
 	•	CSS Grid is used to structure layouts on various pages, particularly for the featured attractions and event sections.
 	•	Example:
-
+```scss
 @mixin grid-layout($columns) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
   gap: $base-spacing;
 }
-
+```
 
 
 13. Flexbox Layout
 
 	•	Flexbox is used to align content horizontally and vertically across the website, including the navbar and various sections.
 	•	Example:
-
+```scss
 @mixin flex-center($direction: row) {
   display: flex;
   flex-direction: $direction;
   justify-content: center;
   align-items: center;
 }
-
+```
 
 
 File Structure
