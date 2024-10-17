@@ -39,7 +39,7 @@ This project heavily uses SCSS to manage and scale the styling of the website. H
 $primary-color: #82bccf;
 $secondary-color: #FFFFFF;
 $base-spacing: 16px;
-
+```
 
 
 2. Custom Properties (CSS Variables)
