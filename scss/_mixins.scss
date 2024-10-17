@@ -4,7 +4,29 @@
 
 // Flex Center Mixin
 @use 'sass:math';
+@mixin flexbox($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
 
+// Typography mixin for text styles
+@mixin typography($size, $weight, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: 1.5;
+}
+
+// Responsive Flexbox for small screens
+@mixin flex-responsive {
+  @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+}
 @mixin flex-center($direction: row) {
     display: flex;
     flex-direction: $direction;

@@ -17,6 +17,61 @@
     }
 }
 
+
+
+
+.history-section {
+    background-color: $secondary-color;
+    padding: $base-spacing * 4 0;
+
+    .container {
+        @include flexbox(row, space-between, center); // Two-column Flexbox layout
+        gap: $base-spacing * 3; // Add spacing between the columns
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 $base-spacing;
+
+        @include flex-responsive; // Responsive behavior on small screens
+    }
+
+    .image-column {
+        flex: 1 1 50%; // 50% width for the image
+        img {
+            width: 100%; // Ensure the image takes full width
+            height: auto;
+            border-radius: 8px; // Rounded corners for the image
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+        }
+    }
+
+    .text-column {
+        flex: 1 1 50%; // 50% width for the text content
+        padding: $base-spacing * 2;
+
+        h2 {
+            @include typography(28px, bold, $primary-color); // Heading style
+            margin-bottom: $base-spacing;
+        }
+
+        p {
+            @include typography(16px, normal, $text-color); // Paragraph style
+        }
+    }
+}
+
+// Responsive adjustments for small screens
+@include respond('small') {
+    .history-section .container {
+        flex-direction: column; // Stack the columns on small screens
+        text-align: center; // Center-align the text and image
+    }
+
+    .image-column, .text-column {
+        flex: 1 1 100%; // Full-width columns on small screens
+        padding: $base-spacing;
+    }
+}
+
 // About Content Section
 .about-content {
     background-color: $background-color;
@@ -113,3 +168,7 @@
         @include grid-layout(1); // Single-column layout for gallery on mobile
     }
 }
+
+
+
+

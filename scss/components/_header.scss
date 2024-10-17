@@ -13,7 +13,7 @@ header {
 
   .logo {
     img {
-      max-width: 60px; // Limit the size of the logo for consistency
+      max-width: 250px; // Limit the size of the logo for consistency
     }
   }
 
@@ -53,5 +53,79 @@ header {
       flex-direction: column; // Stack links vertically
       gap: math.div($base-spacing, 2);
     }
+  }
+}
+
+
+.heading {
+
+  position: relative; // To position the overlay correctly
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: $base-spacing * 2;
+
+  // Background image setup
+  background-image: url('https://wallpapercave.com/wp/wp3982181.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  // Overlay for transparency effect
+  &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(9, 32, 55, 0.502); // Semi-transparent black overlay
+      z-index: 1; // Ensure it stays behind the text
+  }
+
+  h1, p {
+    position: relative;
+    z-index: 2; // Bring the text above the overlay
+}
+
+h1 {
+    font-size: 48px;
+    color: $secondary-color; // Use your secondary color
+    margin-bottom: $base-spacing;
+}
+
+p {
+    font-size: 18px;
+    color: $secondary-color;
+    max-width: 600px;
+    margin-bottom: $base-spacing * 2;
+}
+}
+
+// Responsive Adjustments
+@include respond('medium') {
+  .heading {
+      h1 {
+          font-size: 36px; // Adjust heading size for medium screens
+      }
+
+      p {
+          font-size: 16px; // Adjust paragraph size for medium screens
+      }
+  }
+}
+
+@include respond('small') {
+  .heading {
+      h1 {
+          font-size: 28px; // Adjust heading size for small screens
+      }
+
+      p {
+          font-size: 14px; // Adjust paragraph size for small screens
+      }
   }
 }
