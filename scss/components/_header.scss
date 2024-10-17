@@ -1,62 +1,110 @@
 @use 'sass:math'; // Import Sass math module
 
 header {
-  background-color: $primary-color; // Use your primary color from variables
-  padding: $base-spacing; // Base spacing from variables
+  background-color: $primary-color;
+  padding: $base-spacing;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Optional shadow for visual depth
 
   .container {
-    @include flex-center(row); // Using your flex-center mixin to align items in a row
-    justify-content: space-between; // Ensure space between logo and navigation
+    @include flex-center(row);
+    justify-content: space-between;
     align-items: center;
+    position: relative; // To position the hamburger menu
   }
 
   .logo {
     img {
-      max-width: 250px; // Limit the size of the logo for consistency
+      max-width: 250px; // Limit the size of the logo
     }
   }
 
   nav {
     ul {
-      list-style-type: none; // Remove default list styling
+      list-style-type: none;
       margin: 0;
       padding: 0;
       display: flex;
-      gap: math.div($base-spacing, 2); // Spacing between each navigation item
+      gap: math.div($base-spacing, 2);
+
+      // Hide menu for small and medium screens
+      @media (max-width: 820px) {
+        display: none; // Hide the menu on medium and small screens
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: $primary-color;
+        z-index: 2;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
     }
 
     li {
       margin: 0;
 
       a {
-        @include typography(20px, normal, 1.5, $secondary-color); // Typography mixin for consistent text styling
+        @include typography(20px, normal, 1.5, $secondary-color);
         text-decoration: none;
-        padding: math.div($base-spacing, 2) $base-spacing; // Use math.div() for padding
+        padding: math.div($base-spacing, 2) $base-spacing;
         border-radius: 4px;
         transition: background-color 0.3s ease;
 
         &:hover {
-          background-color: lighten($primary-color, 10%); // Lighten background on hover
+          background-color: lighten($primary-color, 10%);
+          color: $text3-color;
         }
+      }
+    }
+
+    // Hamburger button styling
+    .hamburger {
+      display: none;
+
+      @media (max-width: 820px) {
+        display: block; // Display hamburger menu on medium and small screens
+        cursor: pointer;
+        font-size: 35px;
+        color: $secondary-color;
+        background: none;
+        border: none;
+        position: absolute;
+        top: 10px;
+        right: 20px;
       }
     }
   }
 }
 
-// Mobile responsive adjustments
-@include respond('small') {
+// When hamburger is clicked, the menu becomes visible
+.menu-active nav ul {
+  display: flex !important; // Make sure to force the display to flex when the menu is active
+}
+
+// Custom media queries for small (below 430px) and medium (below 820px) screens
+@media (max-width: 820px) {
   header {
-    padding: math.div($base-spacing, 2); // Reduce padding for smaller screens
+    padding: math.div($base-spacing, 2);
 
     nav ul {
-      flex-direction: column; // Stack links vertically
       gap: math.div($base-spacing, 2);
     }
   }
 }
 
+@media (max-width: 430px) {
+  .logo img {
+    max-width: 180px; // Smaller logo for very small screens
+  }
 
+  nav ul {
+    font-size: 16px;
+  }
+
+  .hamburger {
+    font-size: 30px;
+  }
+}
 .heading {
 
   position: relative; // To position the overlay correctly

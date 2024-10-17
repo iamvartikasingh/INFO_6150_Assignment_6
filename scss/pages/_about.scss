@@ -110,8 +110,8 @@
         .gallery-grid {
             @include grid-layout(4); // 4-column grid layout for images
             img {
-                width: 150px;
-                height: 150px;
+                width: 250px;
+                height: 250px;
                 border-radius: 8px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
