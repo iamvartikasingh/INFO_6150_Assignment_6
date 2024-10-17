@@ -629,7 +629,7 @@ nav li {
   gap: 8px;
 }
 .gallery .container .gallery-grid img {
-  width: 250px;
+  width: 300px;
   height: 250px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

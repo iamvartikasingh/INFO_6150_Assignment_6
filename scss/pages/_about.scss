@@ -25,27 +25,27 @@
     padding: $base-spacing * 4 0;
 
     .container {
-        @include flexbox(row, space-between, center); // Two-column Flexbox layout
+        @include flexbox(row, space-between, center); 
         gap: $base-spacing * 3; // Add spacing between the columns
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 $base-spacing;
 
-        @include flex-responsive; // Responsive behavior on small screens
+        @include flex-responsive; 
     }
 
     .image-column {
-        flex: 1 1 50%; // 50% width for the image
+        flex: 1 1 50%; 
         img {
-            width: 100%; // Ensure the image takes full width
+            width: 100%; 
             height: auto;
             border-radius: 8px; // Rounded corners for the image
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
         }
     }
 
     .text-column {
-        flex: 1 1 50%; // 50% width for the text content
+        flex: 1 1 50%; 
         padding: $base-spacing * 2;
 
         h2 {
@@ -62,7 +62,7 @@
 // Responsive adjustments for small screens
 @include respond('small') {
     .history-section .container {
-        flex-direction: column; // Stack the columns on small screens
+        flex-direction: column; 
         text-align: center; // Center-align the text and image
     }
 
@@ -110,7 +110,7 @@
         .gallery-grid {
             @include grid-layout(4); // 4-column grid layout for images
             img {
-                width: 250px;
+                width: 300px;
                 height: 250px;
                 border-radius: 8px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -165,7 +165,7 @@
     }
 
     .gallery .gallery-grid {
-        @include grid-layout(1); // Single-column layout for gallery on mobile
+        @include grid-layout(1); 
     }
 }
 
