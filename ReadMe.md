@@ -35,7 +35,7 @@ This project heavily uses SCSS to manage and scale the styling of the website. H
 
 	•	Variables are used to define colors, font stacks, and base spacings for consistency and reusability throughout the stylesheets.
 	•	Example:
-
+```scss
 $primary-color: #82bccf;
 $secondary-color: #FFFFFF;
 $base-spacing: 16px;
