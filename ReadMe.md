@@ -187,7 +187,7 @@ gap: math.div($base-spacing, 2);
 File Structure
 
 The project is organized into separate folders for SCSS files and assets.
-
+```plaintext
 /scss
   ├── components
   │   ├── _buttons.scss        // Styles for buttons
@@ -216,7 +216,7 @@ events.html                    // Events page of the website
 ReadMe.md                      // Project documentation file
 script.js                      // JavaScript file for interactivity (e.g., hamburger menu).html
 about.html
-
+```
 SCSS File Structure
 
 	•	Components: Contains styles for individual components such as the header, footer, and buttons.
@@ -226,7 +226,7 @@ How to Run the Project
 
 	1.	Clone the repository from GitHub:
 
-git clone https://github.com/yourusername/boston-travel-guide.git
+git clone https://github.com/singhvart/INFO_6150_Assignment_6
 
 
 	2.	Navigate to the project directory:
